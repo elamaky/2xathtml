@@ -70,15 +70,14 @@ function addInitialImages(images) {
 
 // Funkcija za ažuriranje slika
 function updateImages(updatedImages) {
-    document.querySelectorAll('img').forEach(img => img.remove()); // Briše sve slike
+    // Prvo uklanjamo sve slike
+    document.querySelectorAll('img').forEach(img => img.remove());
 
     // Zatim ponovo dodajemo sve slike iz nove liste
     updatedImages.forEach((imageData) => {
         addImageToDOM(imageData.imageUrl, imageData.position, imageData.dimensions);
     });
 }
-
-
 
 // Funkcija za dodavanje slike na DOM
 function addImageToDOM(imageUrl, position, dimensions) {
